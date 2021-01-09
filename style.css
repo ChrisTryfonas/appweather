@@ -1,0 +1,106 @@
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+    position: relative;
+    margin:0;
+    /* border: 2px red solid; */
+    background: linear-gradient(rgb(139, 198, 233),rgb(49, 78, 240));  
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* background:linear-gradient( #ff7e5f, #feb47b); */
+    
+    
+}
+/* This media query is used to add vertical margin to 6 measurements when screen gets small */
+@media (max-width: 991px){
+    .col-lg-2{
+        margin-bottom: 2rem;
+    }
+}
+
+.row{
+    text-align: center;
+    /* border:2px black solid; */
+    
+}
+#weather{
+    font-size: 3.3rem;
+    font-family: 'Play';
+    
+    text-shadow: 0.1rem 0.1rem 0.1rem rgb(0, 0, 0);
+    
+}
+/* .myborder{
+    
+    border: 1px rgb(206, 206, 206) solid;
+} */
+
+.line{
+    border: 1px solid rgb(197, 197, 197);
+}
+.description{
+    color: rgb(255, 255, 255);
+    font-family:'Montserrat';
+    text-decoration: solid;
+    text-shadow: 0.2rem 0.2rem 0.1rem rgb(0, 0, 0);
+    font-size: 2.7rem;
+    font-weight: 500;
+}
+#place,.temp{
+    color: rgb(255, 255, 255);
+    font-family:'Montserrat';
+    font-size: 3.2rem;
+    font-weight: 500;
+    /* border: 2px green solid;  */
+}
+
+a:hover{
+    color:black;
+    text-decoration: none;
+}
+.max_temp,.min_temp{
+    color: white;
+    font-family:'Montserrat';
+    font-size: 1.3rem;
+    font-weight: 500;
+
+}
+.title{
+    color: rgb(0, 0, 0);
+    font-family:'Montserrat';
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-style: italic;
+
+}
+.error{
+    color: rgb(133, 133, 133);
+    font-family:'Montserrat';
+    font-size: 1.5rem;
+    font-weight: 500;
+    
+
+}
+.metrisi{
+    color: white;
+    font-family:'Montserrat';
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+/* This media query is used to keep footer down to the bottom of the body for medium-large screens */
+@media(min-width:992px){
+    .foot{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+}
+.foot{
+    background-color: black;
+    color: rgb(133, 133, 133);
+    font-size: 1.2rem;
+}
