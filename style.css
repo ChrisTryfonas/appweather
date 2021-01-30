@@ -1,17 +1,25 @@
-html{
-    height: 100%;
-}
-body{
-    height: 100%;
-    position: relative;
-    margin:0;
-    /* border: 2px red solid; */
-    background: linear-gradient(rgb(139, 198, 233),rgb(49, 78, 240));  
 
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    /* background:linear-gradient( #ff7e5f, #feb47b); */
-    
+/* This is a pseudoelement class for the background image and is attached to the body at the js code 
+    when user enables the location 
+    Problem: This load when page loads not after the js*/
+
+body{
+    position: relative;
+    border: 2px rgb(255, 0, 0) solid;
+    /* The background image normally would be added here but it changes according to 
+    the weather description so I attach the image to the body element using javascript */
+}
+/* This pseudo-element is used to create a background black color in order to make the 
+    white letters more redeable and distinct. */
+body::before{
+    content: "";
+    opacity: 0.5;
+    background-color: rgba(0,0,0,0.9);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     
 }
 /* This media query is used to add vertical margin to 6 measurements when screen gets small */
@@ -26,17 +34,25 @@ body{
     /* border:2px black solid; */
     
 }
-#weather{
+
+/* ------------------------------------------------------------------------------- */
+/* This commented style is for putting "myweather" in text format instead of logo  */
+/* #weather{
     font-size: 3.3rem;
     font-family: 'Play';
+    color: rgba(255, 255, 255, 0.993);
+    border-bottom: 2px solid rgb(255, 164, 104);
+    /* text-shadow: 0.1rem 0.1rem 0.1rem rgb(255, 255, 255); 
     
-    text-shadow: 0.1rem 0.1rem 0.1rem rgb(0, 0, 0);
-    
-}
-/* .myborder{
-    
-    border: 1px rgb(206, 206, 206) solid;
 } */
+/* -------------------------------------------------------------------------------- */
+
+/* Logo styling */
+#weather img{
+    width: 20%;
+    height: auto;
+}
+
 
 .line{
     border: 1px solid rgb(197, 197, 197);
@@ -48,6 +64,15 @@ body{
     text-shadow: 0.2rem 0.2rem 0.1rem rgb(0, 0, 0);
     font-size: 2.7rem;
     font-weight: 500;
+}
+
+/* This class is for the message when user does not allow the location */
+.error-msg{
+    color: rgb(0, 0, 0);
+    font-family:'Montserrat';
+    text-decoration: solid;
+    font-size: 2.5rem;
+    font-weight: 600;
 }
 #place,.temp{
     color: rgb(255, 255, 255);
@@ -69,11 +94,15 @@ a:hover{
 
 }
 .title{
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-family:'Montserrat';
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 500;
-    font-style: italic;
+    margin-bottom: 0.5rem;
+    text-decoration: underline;
+    text-underline-offset: 0.4rem;
+    
+   
 
 }
 .error{
@@ -91,16 +120,11 @@ a:hover{
     font-weight: 500;
 }
 
-/* This media query is used to keep footer down to the bottom of the body for medium-large screens */
-@media(min-width:992px){
-    .foot{
-        position: absolute;
-        bottom: 0;
-        left: 0;
-    }
-}
+
 .foot{
     background-color: black;
     color: rgb(133, 133, 133);
     font-size: 1.2rem;
 }
+
+

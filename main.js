@@ -1,3 +1,4 @@
+let body = document.querySelector("body");
 let place_div= document.getElementById("place");
 let icon_div= document.getElementById("weather_icon");
 let basic_info = document.querySelector(".basic_info");//container with place,icon,temps,description
@@ -49,6 +50,7 @@ function success(pos){
         let country = data.sys.country;
         let icon = data.weather[0].icon; // is a code number i.e 02n or 08d
         let description = data.weather[0].description;
+        
         let humidity = data.main.humidity; // By default in %
         let sunrise = data.sys.sunrise; // By default in Unix which means number of seconds after 00:00 1/1/1970
         let sunset = data.sys.sunset; // By default in Unix which means number of seconds after 00:00 1/1/1970
@@ -155,24 +157,57 @@ function success(pos){
         visibility_div.firstElementChild.innerHTML = "Visibility";
         visibility_div.lastElementChild.innerHTML = `${Math.floor(visibility/1000)}Km`;
 
+        //--------------------------------------------------------------------------------//
+        // add the background image based on the description and the time of the day
+        // all files are in image folder with the name a like : "images/rain_day.jpg"
+        
+        // The timestamps of sunrise and sunset are in Unix(number of secs after 00:00 of 1/1/1970)
+        // The timestamp in javascript is number of millisecs after 00:00 of 1/1/1970.
+        let now = Math.round(new Date().getTime()/1000); // current time in Unix
+        let status = ""; // day or night
+        if(now>sunrise && now<sunset){ //if current timestamp between sunrise and set it's daytime
+            status = "day";
+        }
+        else{
+            status = "night";
+        }
+        console.log(`it's ${status}`);
+        console.log(Math.round((now-sunrise)/3600)); // Number of hours after sunrise
+        console.log(Math.round((now-sunset)/3600)); // Number of hours after sunrise
 
+        let new_description = description.replace(' ','_'); // replace space with _ to match my images description template
+        console.log(new_description);
 
-        // extra_info.classList.add('myborder');
-
-        // Skycons
-        // let skycons = new Skycons({"color": "white"});
-        // skycons.add("icon1", Skycons.CLEAR_NIGHT);
-        // skycons.play();
-
+        if(status==="day"){
+            new_description += "_day.jpg" //create the image standard name and add jpg extension
+            body.style.backgroundImage = 'url(images/'+new_description+')'; // add bg image
+            body.style.backgroundSize ="cover";
+            body.style.backgroundRepeat ="no-repeat";
+          
+        }
+        else{
+            new_description += "_night.jpg" //create the image standard name and add jpg extension
+            console.log(new_description);
+            body.style.backgroundImage = 'url(images/'+new_description+')'; // add bg image 
+            body.style.backgroundSize ="cover";
+            body.style.backgroundRepeat ="no-repeat";
+        }
+        
+    
     })
 }
 // Failure function runs when user does not allow location
 function failure(){
     console.log('Come on you did not open your location...');
+   
     basic_info.innerHTML = " Weather data can not load because you didn't enable your location. Please try again..."
-    basic_info.classList.add("title");  
+    basic_info.classList.add("error-msg");  
 }
 
+//------------------------------- End of basic code logic ---------------------------------------------------------//
+
+
+// ------------------------------- FUNCTIONS -------------------------------------------------//
 // This function takes the direction(degrees) of the wind and returns the direction in symbols(i.e N/E) 
 function Converter(degress){
     let ranges=[ {min:348.75,max:360},

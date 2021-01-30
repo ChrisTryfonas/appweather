@@ -1,0 +1,5 @@
+changes to appweather:
+
+1) Find images for every weather phenomenon and load based on the description.
+2) Make a logo and load it.
+3) Host to a server.

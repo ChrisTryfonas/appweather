@@ -18,120 +18,122 @@
     <title>myweather</title>
 
 </head>
-<body>
-    
-    <!-- Header-->
-    <div class="container">
-        <div class="row my-5 d-flex justify-content-center ">
-            <div class="col-md-12 ">
-                <div id="weather">
-                    <p>myweather<p>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-
-    <!-- Place and Icon - basic info -->
-    <div class="container basic_info">
-        <div class="row mt-5 d-flex justify-content-center align-items-center">
-            <div class="col-md-6 ">
-                <div id="place">
-                    
-                </div>
-                
-            </div>
-            <div class="col-md-6 ">
-                <!-- <canvas id="icon1" width="128" height="128"></canvas> -->
-                <div id="weather_icon">
+<body> <!--Here body works as pseudo element-->
+    <section class="main-info">
+        <!-- Header-->
+        <div class="container">
+            <div class="row my-5 d-flex justify-content-center ">
+                <div class="col-lg-12 ">
+                    <div id="weather">
+                        <img src="./logo_2.png">
+                        
+                    </div>
                     
                 </div>
             </div>
-        </div>  
-
-        <!-- temperature and description -->
-
-        <div class="row my-2 ">
-            <div class="col-md-12 d-flex justify-content-center">
-                    <a class="temp" href="#"></a>
-
-            </div>
         </div>
+
+        <!-- Place and Icon - basic info -->
+        <div class="container basic_info">
+            <div class="row mt-5 d-flex justify-content-center align-items-center">
+                <div class="col-md-6 ">
+                    <div id="place">
+                        
+                    </div>
+                    
+                </div>
+                <div class="col-md-6 ">
+                    <!-- <canvas id="icon1" width="128" height="128"></canvas> -->
+                    <div id="weather_icon">
+                        
+                    </div>
+                </div>
+            </div>  
+
+            <!-- temperature and description -->
+
+            <div class="row my-2 ">
+                <div class="col-md-12 d-flex justify-content-center">
+                        <a class="temp" href="#"></a>
+
+                </div>
+            </div>
+            
+            <!-- Min and Max temperatures -->
+            <div class="row mb-4">
+                <div class="col-md-6 min_temp  d-md-flex justify-content-end align-items-center">
+                    
+                </div>
+                <div class="col-md-6 max_temp d-md-flex justify-content-start align-items-center">
+                    
+                </div>
+            </div>
         
-        <!-- Min and Max temperatures -->
-        <div class="row mb-4">
-            <div class="col-md-6 min_temp  d-md-flex justify-content-end align-items-center">
-                
-            </div>
-            <div class="col-md-6 max_temp d-md-flex justify-content-start align-items-center">
-                
-            </div>
-        </div>
-    
-        <div class="row mb-5">
-            <div class="col-md-12 description">
-                     
-            </div>
-        </div>
-    </div>
-
-    
-    
-    
-    <!-- Weather Details-->
-    <div>
-        <div class="container extra_info">
-            <div class="row my-5 pb-5">
-                <div class="col-lg-2 humidity"> <!-- Humidity-->
-                    <div class="title"></div>
-                    <div class="metrisi"></div>
-                </div>
-                <div class="col-lg-2 rise_set"> <!-- Sunrise/Sunset-->
-                    <div class="title"></div>
-                    <div class="metrisi"></div>
-                    <div class="metrisi"></div>
-                </div>
-                <div class="col-lg-2 wind"> <!-- wind-->
-                    <div class="title"></div>
-                    <div class="metrisi"></div>
-                    <div class="metrisi"></div>
-
-                </div>
-                <div class="col-lg-2 feels_like"> <!-- feels like-->
-                    <div class="title"></div>
-                    <div class="metrisi"></div>
-                    <div class="metrisi"></div>
-
-                </div>
-                <div class="col-lg-2 pressure"> <!--pressure-->
-                    <div class="title"></div>
-                    <div class="metrisi"></div>
-                    <div class="metrisi"></div>
-
-                </div>
-                <div class="col-lg-2 visibility"> <!-- visibility -->
-                    <div class="title"></div>
-                    <div class="metrisi"></div>
-                    <div class="metrisi"></div>
-
+            <div class="row mb-5">
+                <div class="col-md-12 description">
+                        
                 </div>
             </div>
         </div>
-    </div>
 
-    <div>
-        <div class="#">
-            <div class="row">
-                <div class="col-12 d-flex justify-content-center align-items-center foot">
-                    <p class="pt-2">Powered by ChrisTryf</p>
-
-                </div>
-            </div>
-        </div>
-    </div>
         
+        
+        
+        <!-- Weather Details-->
+        <div>
+            <div class="container extra_info">
+                <div class="row my-5 pb-5">
+                    <div class="col-lg-2 humidity"> <!-- Humidity-->
+                        <div class="title"></div>
+                        <div class="metrisi"></div>
+                    </div>
+                    <div class="col-lg-2 rise_set"> <!-- Sunrise/Sunset-->
+                        <div class="title"></div>
+                        <div class="metrisi"></div>
+                        <div class="metrisi"></div>
+                    </div>
+                    <div class="col-lg-2 wind"> <!-- wind-->
+                        <div class="title"></div>
+                        <div class="metrisi"></div>
+                        <div class="metrisi"></div>
+
+                    </div>
+                    <div class="col-lg-2 feels_like"> <!-- feels like-->
+                        <div class="title"></div>
+                        <div class="metrisi"></div>
+                        <div class="metrisi"></div>
+
+                    </div>
+                    <div class="col-lg-2 pressure"> <!--pressure-->
+                        <div class="title"></div>
+                        <div class="metrisi"></div>
+                        <div class="metrisi"></div>
+
+                    </div>
+                    <div class="col-lg-2 visibility"> <!-- visibility -->
+                        <div class="title"></div>
+                        <div class="metrisi"></div>
+                        <div class="metrisi"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="#">
+                <div class="row pt-5">
+                    <div class="col-12 d-flex justify-content-center align-items-center foot">
+                        <p class="pt-2">Powered by ChrisTryf</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
  
          
+   
     <script src="main.js"></script>
   
 
