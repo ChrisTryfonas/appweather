@@ -4,4 +4,4 @@ Tools : HTML, CSS, Bootstrap, JavaScript, OpenWeatherMap API
 
 Below are some screenshots that demonstrate the app's responsive design. First two pics are taken from desktop and the other two are taken from smartphone iPhone 7. 
 
-![](readme_pic.png).
+![Below are some screenshots that demonstrate the app's responsive design. First two pics are taken from desktop and the other two are taken from smartphone iPhone 7.](readme_pic.png).
